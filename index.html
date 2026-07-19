@@ -3,88 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mental Math: Focus Trainer</title>
+<title>Mental Math: Focus Trainer — Daily Brain Training for iPhone</title>
+<meta name="description" content="Train your brain with short daily mental math sessions. Addition, subtraction, multiplication, division, percentages, and squares — with progress tracking, streaks, and articles that teach the tricks.">
+<meta property="og:title" content="Mental Math: Focus Trainer">
+<meta property="og:description" content="Focus your mind in 5 minutes a day. Daily mental math practice for iPhone.">
+<meta property="og:image" content="https://denyskt-hub.github.io/mental-math/assets/icon.jpg">
 <style>
   :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
   body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; color: #1c1c1e; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { color: #e6e6ea; background: #14161b; } a { color: #409cff; } .callout { border-left-color: #0a84ff; background: rgba(10,132,255,.1); } }
-  h1 { font-size: 1.9rem; margin: 0 0 4px; }
-  .tagline { color: #6b6b70; font-size: 1.05rem; margin: 0 0 1.5rem; }
-  h2 { font-size: 1.25rem; margin: 2.2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid rgba(128,128,128,.2); }
-  h3 { font-size: 1rem; margin: 1.2rem 0 .3rem; }
-  .updated { color: #6b6b70; font-size: .9rem; }
-  .callout { border-left: 3px solid #007aff; padding: 12px 16px; background: rgba(0,122,255,.07); border-radius: 8px; margin: 1.2rem 0; }
+         margin: 0; color: #1c1c1e; background: #fff; }
   a { color: #0066cc; }
-  ul { padding-left: 1.2rem; }
-  footer { margin-top: 3rem; color: #6b6b70; font-size: .85rem; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  .hero { background: linear-gradient(180deg, #e8f4fe 0%, #f7fbff 70%, #fff 100%); padding: 64px 0 40px; text-align: center; }
+  .hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 24px rgba(0,60,120,.18); }
+  h1 { font-size: 2.2rem; line-height: 1.2; margin: 20px 0 8px; }
+  h1 .accent { color: #007aff; }
+  .tagline { font-size: 1.15rem; color: #4b4b50; max-width: 560px; margin: 0 auto 24px; }
+  .badge img { height: 54px; }
+
+  .shots { display: flex; gap: 16px; overflow-x: auto; padding: 32px 20px; max-width: 1000px; margin: 0 auto;
+           scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .shots img { height: 440px; border-radius: 20px; scroll-snap-align: center; flex: 0 0 auto;
+               box-shadow: 0 6px 20px rgba(0,40,90,.12); }
+
+  section.features { padding: 24px 0 8px; }
+  h2 { font-size: 1.5rem; text-align: center; margin: 24px 0 4px; }
+  .subhead { text-align: center; color: #6b6b70; margin: 0 0 28px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { border: 1px solid rgba(128,128,128,.18); border-radius: 14px; padding: 18px 20px; background: rgba(0,122,255,.03); }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card .emoji { font-size: 1.4rem; display: block; margin-bottom: 8px; }
+  .card p { margin: 0; color: #4b4b50; font-size: .95rem; }
+
+  .langs { text-align: center; color: #6b6b70; font-size: .9rem; margin: 28px auto 0; max-width: 640px; }
+
+  .cta { text-align: center; padding: 40px 0 56px; }
+
+  footer { border-top: 1px solid rgba(128,128,128,.2); padding: 28px 0 48px; color: #6b6b70; font-size: .9rem; }
+  footer .links { margin-bottom: 8px; }
+  footer .links a { margin-right: 16px; }
+
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6ea; background: #14161b; }
+    a { color: #409cff; }
+    .hero { background: linear-gradient(180deg, #102032 0%, #121a24 70%, #14161b 100%); }
+    .tagline, .card p { color: #a6a6ad; }
+    .card { background: rgba(10,132,255,.06); }
+    h1 .accent { color: #409cff; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Mental Math: Focus Trainer</h1>
-<p class="tagline">Daily mental math practice — quick sessions of addition, subtraction, multiplication, division, percentages, and squares, with progress tracking, streaks, and short articles that teach the tricks behind fast arithmetic.</p>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="assets/icon.jpg" alt="Mental Math app icon" width="96" height="96">
+    <h1><span class="accent">Focus</span> your mind<br>in 5 minutes a day</h1>
+    <p class="tagline">Mental Math: Focus Trainer — short daily sessions of mental arithmetic that sharpen focus, speed, and accuracy. No distractions, just you and the numbers.</p>
+    <a class="badge" href="https://apps.apple.com/app/mental-math-focus-trainer/id6757860865">
+      <img src="assets/appstore-badge.svg" alt="Download on the App Store">
+    </a>
+  </div>
+</header>
 
-<h2>Support</h2>
-<p>Questions, feedback, or a bug to report? Get in touch:<br>
-<a href="mailto:denys.kotenko@icloud.com">denys.kotenko@icloud.com</a></p>
-
-<h2>Privacy Policy</h2>
-<p class="updated">Last updated: 19 July 2026</p>
-
-<p>Mental Math has no accounts and never asks for your name, email, or any other personal details. Your exercise history stays on your device. Here is exactly what the app uses.</p>
-
-<div class="callout">
-<strong>The short version:</strong> Your practice results, streaks, and settings live on your iPhone — we don't store them on any server. The only thing that leaves your phone is anonymous, aggregate app-usage and crash information. Payments for the optional Pro subscription are handled entirely by Apple.
+<div class="shots">
+  <img src="assets/shot-4.jpg" alt="Focused practice — train one skill at a time" loading="lazy">
+  <img src="assets/shot-6.jpg" alt="Distraction-free exercise screen with a clean number pad" loading="lazy">
+  <img src="assets/shot-5.jpg" alt="Daily Benchmark — a consistent 100-question performance test" loading="lazy">
+  <img src="assets/shot-2.jpg" alt="Summary screen with average scores per exercise" loading="lazy">
 </div>
 
-<h3>1. Your Practice Data Stays on Your Device</h3>
-<p>Everything the app records about your training — exercise results, scores, streaks, custom exercises, and preferences — is stored locally on your iPhone (and in a shared app container so widgets can show your streak). It is never uploaded to us or to any third party, and deleting the app removes it from your device.</p>
+<section class="features">
+  <div class="wrap">
+    <h2>Everything you need to train daily</h2>
+    <p class="subhead">Simple on the surface, deep enough to keep you coming back.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="emoji">🧮</span>
+        <h3>Six exercise types</h3>
+        <p>Addition, subtraction, multiplication, division, percentages, and squares — each in its own focused drill.</p>
+      </div>
+      <div class="card">
+        <span class="emoji">🎚️</span>
+        <h3>Four difficulty levels</h3>
+        <p>From Easy warm-ups to Expert problems that reward real mental technique. Grow into the next level at your pace.</p>
+      </div>
+      <div class="card">
+        <span class="emoji">⏱️</span>
+        <h3>Performance Score</h3>
+        <p>A consistent 100-question benchmark of mixed operations — one clear number for your speed and accuracy over time.</p>
+      </div>
+      <div class="card">
+        <span class="emoji">🔥</span>
+        <h3>Progress &amp; streaks</h3>
+        <p>Charts for every exercise, a daily streak with records to chase, and a home-screen widget that keeps you honest.</p>
+      </div>
+      <div class="card">
+        <span class="emoji">📚</span>
+        <h3>Learn the tricks</h3>
+        <p>Short articles teach the mental moves behind fast arithmetic — from the ×11 pattern to squaring anything near a round number.</p>
+      </div>
+      <div class="card">
+        <span class="emoji">🔒</span>
+        <h3>Private by design</h3>
+        <p>No account, no sign-up. Your practice history stays on your device — see the <a href="privacy.html">privacy policy</a>.</p>
+      </div>
+    </div>
+    <p class="langs">Available in English, French, German, Hindi, Russian, Spanish, Thai, Turkish, Ukrainian, and Vietnamese.</p>
+  </div>
+</section>
 
-<h3>2. Analytics &amp; Diagnostics</h3>
-<p>To fix bugs and understand which features are used, Mental Math collects a small amount of <strong>anonymous, aggregate</strong> information through Google Firebase (Analytics and Crashlytics):</p>
-<ul>
-  <li>Usage events — e.g. app opened, a session completed, a feature used, and error codes.</li>
-  <li>Crash reports and basic performance/device information (e.g. OS version, device model, approximate region).</li>
-  <li>A Firebase installation identifier and a random per-install device identifier (Apple's "identifier for vendor") used to group these events and crash reports.</li>
-</ul>
-<div class="callout">
-This analytics stream <strong>never includes your actual answers, scores, or practice history</strong>. It is not linked to your name or identity (Mental Math has no accounts), and it is <strong>not used to track you across other apps or websites</strong> — no advertising identifier (IDFA) is used.
+<div class="cta">
+  <a class="badge" href="https://apps.apple.com/app/mental-math-focus-trainer/id6757860865">
+    <img src="assets/appstore-badge.svg" alt="Download on the App Store">
+  </a>
 </div>
-<p>This processing is handled by Google. See <a href="https://firebase.google.com/support/privacy">Firebase Privacy &amp; Security</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
-<h3>3. Purchases (Pro Subscription)</h3>
-<p>The optional Pro subscription is sold through the Apple App Store and processed entirely by Apple. We never see or store your payment details, billing address, or card number. The app checks your subscription status on-device through Apple's StoreKit. You can manage or cancel the subscription at any time in <em>iOS Settings → Apple Account → Subscriptions</em>.</p>
-
-<h3>4. Practice Reminders (Notifications)</h3>
-<p>If you enable reminders, they are scheduled as <strong>local notifications on your device</strong>. There is no push server, and enabling reminders sends nothing to us. You can turn them off at any time in the app or in iOS Settings.</p>
-
-<h3>5. Information We Do NOT Collect</h3>
-<ul>
-  <li>No account, name, email address, or phone number.</li>
-  <li>No precise or background location.</li>
-  <li>No advertising identifier and no cross-app or cross-site tracking.</li>
-  <li>No upload of your practice results or answers off your device.</li>
-  <li>We do not sell, rent, or share your personal data.</li>
-</ul>
-
-<h3>6. Data Retention</h3>
-<p>Your practice data exists only on your device while the app is installed and is removed when you delete it. Anonymous analytics and crash data are retained by Google according to their policies. Purchase records are kept by Apple under your Apple Account.</p>
-
-<h3>7. Children's Privacy</h3>
-<p>Mental Math is not directed to children under 13, and we do not knowingly collect personal information from them.</p>
-
-<h3>8. Your Rights &amp; Choices</h3>
-<p>Delete the app to remove all locally stored practice data. Because analytics is anonymous and not tied to an identity, there is no personal profile of you for us to hold, access, or delete.</p>
-
-<h3>9. Changes to This Policy</h3>
-<p>We may update this policy as the app evolves. Material changes will appear here with a new "Last updated" date.</p>
-
-<h2>Terms of Service</h2>
-<p>Mental Math: Focus Trainer is licensed under Apple's standard End User License Agreement (EULA):<br>
-<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a></p>
-
-<footer>© 2026 Denys Kotenko · Mental Math: Focus Trainer</footer>
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Service</a>
+      <a href="mailto:denys.kotenko@icloud.com">Support</a>
+    </div>
+    © 2026 Denys Kotenko · Mental Math: Focus Trainer
+  </div>
+</footer>
 
 </body>
 </html>
